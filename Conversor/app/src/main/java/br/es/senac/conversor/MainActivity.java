@@ -13,6 +13,7 @@ import java.util.Locale;
 //Declarando uma class...Erdando uma class/ herança...
 public class MainActivity extends AppCompatActivity {
 
+    // Variavel
     int alturaEmCentimetros = 0;
 
          private String formatarValorComdoisDigitos(double valor){
@@ -27,14 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
         //Metodo que liga a activity.java
         setContentView(R.layout.activity_main);
+
         // INSTANCIA DE UM ELEMENTO TEXTO DO ANDROID
         final TextView txtMetros = (TextView) findViewById(R.id.txtMetros);
+
         //EXERCICIO CONVENCIONAL DE INSTANCIAR OBJETO NO JAVA
         // FINAL TextView txtMetros = new TextView();
 
         txtMetros.setText(String.valueOf(alturaEmCentimetros));
         final TextView txtPes = (TextView) findViewById(R.id.txtPes);
 
+        // barra de rolagem
         final SeekBar seekBar = (SeekBar) findViewById(R.id.skbMetros);
 
         final Button button = (Button) findViewById(R.id.btnConverter);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
+            //Metodo
             public void onStartTrackingTouch(SeekBar seekBar) {
                 txtPes.setText("Toque em Converter");
 
