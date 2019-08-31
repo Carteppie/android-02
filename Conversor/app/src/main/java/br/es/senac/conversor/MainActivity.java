@@ -15,6 +15,24 @@ public class MainActivity extends AppCompatActivity {
 
     // Variavel
     int alturaEmCentimetros = 0;
+    int v1 = 2;
+    int v2 = 10;
+    int v3 = 5;
+
+    private void onCreate(){
+
+        int resultado = somaValor(v1, v2, v3);
+    }
+
+
+
+
+    private int somaValor(int v1, int v2, int v3){
+        return (v1 +v2 +v3) /3;
+
+
+
+    }
 
          private String formatarValorComdoisDigitos(double valor){
          String retorno = String.format(Locale.FRANCE,"%.2f", valor);
@@ -28,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Metodo que liga a activity.java
         setContentView(R.layout.activity_main);
+
+        final TextView txtMedia = (TextView) findViewById(R.id.txtMedia);
 
         // INSTANCIA DE UM ELEMENTO TEXTO DO ANDROID
         final TextView txtMetros = (TextView) findViewById(R.id.txtMetros);
@@ -53,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
                 txtMetros.setText(progress + "centimetros");
 
                 String texto = formatarValorComdoisDigitos(progress / 100.0);
+
+                //Stringo recebe ela mesmo
                 texto += "m.";
                 txtMetros.setText(texto);
             }
@@ -62,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {
                 txtPes.setText("Toque em Converter");
 
+            }
+
+            public void onStartTrackingTouch(TextView textView) {
+                txtMedia.setText("Toque em Converter");
             }
 
             @Override
@@ -74,15 +100,21 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // alturaemcentimetros vai ta o valor do seekbar
                 double alturaEmPes = alturaEmCentimetros / 30.48;
                 String texto = formatarValorComdoisDigitos(alturaEmPes);
                 texto += " pé(s)";
                 txtPes.setText(texto);
             }
         });
+
     }
 
     private String formataValorComDoisDigitos(double valor) {
         return String.format(Locale.FRANCE, "%.2f" , valor);
     }
-}
+
+
+    }
+

@@ -10,20 +10,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
         android:text="Informe sua altura em metros:"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/skbMetros"
-        android:layout_width="317dp"
+        android:layout_width="0dp"
         android:layout_height="34dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginLeft="47dp"
         android:layout_marginTop="38dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginRight="47dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtMetros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -32,34 +37,49 @@
         android:id="@+id/txtMetros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginBottom="29dp"
         android:text="0,00m"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/skbMetros" />
+        app:layout_constraintBottom_toTopOf="@+id/btnConverter"
+        app:layout_constraintStart_toEndOf="@+id/btnConverter" />
 
     <Button
         android:id="@+id/btnConverter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="211dp"
         android:text="converter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMetros" />
+        app:layout_constraintEnd_toStartOf="@+id/txtMedia"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="53dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:text="0,00 pé(s)"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtMetros"
         app:layout_constraintTop_toBottomOf="@+id/txtMetros" />
+
+    <TextView
+        android:id="@+id/txtMedia"
+        android:layout_width="104dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="232dp"
+        android:text="Média"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConverter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
